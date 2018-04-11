@@ -10,7 +10,7 @@ export default function SearchForm(props) {
                 type="search"
                 id="search"
                 name="search"
-                placeholder="Player name or speed"
+                placeholder="Player name or rating"
                 onChange={event => props.change(event.target.value)}//grabbing the value and passing it back to parent
                 // onChange={event => props.search(true)}//pass back true if there is a search item
             />

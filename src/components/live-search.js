@@ -36,7 +36,7 @@ export default class LiveSearch extends React.Component {
         }
 
         const players = this.props.players.filter(player => {
-            let searchStr = player.name + player.ratings[0].spd;
+            let searchStr = player.name + player.ratings[0].pot;
            
             return searchStr.toLowerCase().includes(
                 this.state.searchTerm.toLowerCase()
