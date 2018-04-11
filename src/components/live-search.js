@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiData from './api-data';
+import axios from 'axios';
 import SearchForm from './search-form';
 // import CharacterCount from './character-count';
 import PlayerList from './player-list';
@@ -10,10 +10,39 @@ export default class LiveSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            playerData: [],
             searchTerm: ''
             // isSearch: false//
         }
     }
+
+    componentDidMount() {//access allowed because of class instead of function FOR API
+        axios
+          .get("https://github.com/alexnoob/BasketBall-GM-Rosters/blob/master/2017-18.NBA.Roster.json")
+          
+          .then(response => {
+    
+            // create an array of contacts only with relevant data
+            const newPlayerData = response.data.map(p => {
+              return {
+                name: p.name || p.firstName,
+                pos: p.pos,
+                ratings: p.ratings,
+                imgURL: p.imgURL
+              };
+            });
+    
+            // create a new "State" object without mutating 
+            // the original State object. 
+            const newState = Object.assign({}, this.state, {
+              playerData: newPlayerData
+            });
+    
+            // store the new state object in the component's state
+            this.setState(newState);
+          })
+          .catch(error => console.log(error));
+      }
 
     setPlayerSearch(searchTerm) {
         this.setState({searchTerm})  
@@ -25,9 +54,6 @@ export default class LiveSearch extends React.Component {
     //     )  
     // }
 
-    getData(data) {
-        this.setState({data})
-    }
 
 
     render() {
@@ -40,8 +66,8 @@ export default class LiveSearch extends React.Component {
             console.log('false');
             RealPlayer = PlayerListFirst
         }
-
-        const players = this.props.players.filter(player => {
+        console.log(this.state.playerData);
+        const players = this.props.players.filter(player => {//this.state.playerData should be used for api
             let searchStr = player.name + player.ratings[0].pot;
            
             return searchStr.toLowerCase().includes(
@@ -51,7 +77,6 @@ export default class LiveSearch extends React.Component {
         return (
             <div className="live-search">
                 SEARCH NBA PLAYERS
-                <ApiData dataform={data => this.getData(data)}/>
                 <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} /> {/*ignore the isSearch*/}
                 <RealPlayer players={players} />
             </div>
