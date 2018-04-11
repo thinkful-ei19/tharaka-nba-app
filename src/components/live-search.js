@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiData from './api-data';
 import SearchForm from './search-form';
 // import CharacterCount from './character-count';
 import PlayerList from './player-list';
@@ -24,6 +25,11 @@ export default class LiveSearch extends React.Component {
     //     )  
     // }
 
+    getData(data) {
+        this.setState({data})
+    }
+
+
     render() {
         let RealPlayer;
         // if(this.state.isSearch === true){console.log('true')}else if(this.state.isSearch === false || this.state.isSearch === ''){console.log('false')}
@@ -45,7 +51,8 @@ export default class LiveSearch extends React.Component {
         return (
             <div className="live-search">
                 SEARCH NBA PLAYERS
-                <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} />
+                <ApiData dataform={data => this.getData(data)}/>
+                <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} /> {/*ignore the isSearch*/}
                 <RealPlayer players={players} />
             </div>
         );
