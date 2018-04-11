@@ -1841,7 +1841,7 @@
 
 {"tid":1,
 "name":"Kyrie Irving",
-"ratings":[{"hgt":33,"stre":36,"spd":91,"jmp":82,"endu":87,"ins":55,"dnk":89,"ft":74,"fg":86,"tp":70,"diq":23,"oiq":68,"drb":86,"pss":50,"reb":22,"pot":77,"skills":["B"]}],
+"ratings":[{"hgt":33,"stre":36,"spd":91,"jmp":82,"endu":87,"ins":55,"dnk":89,"ft":74,"fg":86,"tp":70,"diq":23,"oiq":68,"drb":99,"pss":50,"reb":22,"pot":77,"skills":["B"]}],
 "awards":[{"season":2012,"type":"Rookie of the Year"}],
 "pos":"G","hgt":75,"weight":193,
 "born":{"year":1992,"loc":"Melbourne, Australia"},
@@ -6369,7 +6369,7 @@
 
 {"tid":13,
 "name":"Lonzo Ball",
-"ratings":[{"hgt":49,"stre":31,"spd":69,"jmp":66,"endu":67,"ins":25,"dnk":64,"ft":0,"fg":19,"tp":62,"diq":44,"oiq":49,"drb":70,"pss":68,"reb":74,"pot":74,"skills":["Ps"]}],
+"ratings":[{"hgt":49,"stre":31,"spd":69,"jmp":66,"endu":67,"ins":25,"dnk":64,"ft":10,"fg":19,"tp":62,"diq":44,"oiq":49,"drb":70,"pss":80,"reb":74,"pot":74,"skills":["Ps"]}],
 "pos":"PG","hgt":78,"weight":185,
 "born":{"year":1997,"loc":"Chino Hills, CA"},
 "imgURL":"http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/1628366.png",
