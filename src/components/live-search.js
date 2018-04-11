@@ -60,13 +60,13 @@ export default class LiveSearch extends React.Component {
         let RealPlayer;
         // if(this.state.isSearch === true){console.log('true')}else if(this.state.isSearch === false || this.state.isSearch === ''){console.log('false')}
         if(this.state.searchTerm.length > 0) {
-            console.log('true');
+            // console.log('true');
             RealPlayer = PlayerList;
         } else {
-            console.log('false');
+            // console.log('false');
             RealPlayer = PlayerListFirst
         }
-        console.log(this.state.playerData);
+        // console.log(this.state.playerData);
         const players = this.props.players.filter(player => {//this.state.playerData should be used for api
             let searchStr = player.name + player.ratings[0].pot;
            
