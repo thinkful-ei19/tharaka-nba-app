@@ -44,6 +44,7 @@ export default class LiveSearch extends React.Component {
         });
         return (
             <div className="live-search">
+                SEARCH NBA PLAYERS
                 <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} />
                 <RealPlayer players={players} />
             </div>

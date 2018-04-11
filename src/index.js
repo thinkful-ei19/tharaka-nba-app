@@ -6,5 +6,7 @@ import players from './players.json';
 import LiveSearch from './components/live-search';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<LiveSearch players={players} />, document.getElementById('root'));
+ReactDOM.render(
+    <LiveSearch players={players} />, document.getElementById('root')
+);
 registerServiceWorker();
