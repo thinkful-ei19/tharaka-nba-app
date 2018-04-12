@@ -10,15 +10,18 @@ export default class LiveSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playerData: [],
-            searchTerm: ''
+            playerData: [],//For API
+            searchTerm: '',
+            content: undefined//For API
             // isSearch: false//
         }
     }
 
+    /*#####################################################################################################################################################*/
+    //Method 1 for API
     componentDidMount() {//access allowed because of class instead of function FOR API
         axios
-          .get("https://github.com/alexnoob/BasketBall-GM-Rosters/blob/master/2017-18.NBA.Roster.json")
+          .get("https://github.com/alexnoob/BasketBall-GM-Rosters/blob/master/2017-18.NBA.Roster.json")//Can't access because GIthub doesnt allow corss site
           
           .then(response => {
     
@@ -43,6 +46,22 @@ export default class LiveSearch extends React.Component {
           })
           .catch(error => console.log(error));
       }
+
+      setStateData(content){
+        this.setState({content})
+        console.log(this.state.content)
+      }
+
+      //Method 2 for API
+      componentWillMount(){
+        const url = 'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean';
+        // fetch(url).then(res => res.json()).then(res => this.setState({content: res.results}))
+        fetch(url).then(res => res.json()).then(res => this.setStateData(res))
+        // fetch(url).then(res => res.json()).then(res => console.log(res))
+        // console.log(this.state.content);
+      }
+      /*#####################################################################################################################################################*/
+
 
     setPlayerSearch(searchTerm) {
         this.setState({searchTerm})  
