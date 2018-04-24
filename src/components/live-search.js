@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 import SearchForm from './search-form';
+import * as actiontypes from '../actions/actiontypes';
 // import CharacterCount from './character-count';
 import PlayerList from './player-list';
 import PlayerListFirst from './player-list-first';
+// import LoginForm from './login-form';
 
-export default class LiveSearch extends React.Component {
+class LiveSearch extends React.Component {
     
     constructor(props) {
         super(props);
@@ -95,10 +98,24 @@ export default class LiveSearch extends React.Component {
         });
         return (
             <div className="live-search">
+                <p>{this.props.foo}</p>
+                <button onClick={this.props.buttonClicked}>SearchAction</button>
                 SEARCH NBA PLAYERS
+                {/* <LoginForm /> */}
                 <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} /> {/*ignore the isSearch*/}
                 <RealPlayer players={players} />
             </div>
         );
     }
+
 }
+
+const mapStateToProps = (state) => {
+     return {foo: state.foo}
+}
+
+const mapDispactchToProps = (dispatch) => {
+    return {buttonClicked: ()=>{dispatch({type: actiontypes.BUTTON_CLICKED})}}
+}
+
+export default connect(mapStateToProps, mapDispactchToProps)(LiveSearch)

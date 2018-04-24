@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import './index.css';
 import App from './App';
 import './App.css';
 import players from './players.json';
 import LiveSearch from './components/live-search';
+import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
 // let images = new Array()
@@ -23,6 +25,9 @@ import registerServiceWorker from './registerServiceWorker';
 //     )
 
 ReactDOM.render(
-    <LiveSearch players={players} />, document.getElementById('root')
+    <Provider store={store}>
+        <LiveSearch players={players} />
+    </Provider>,
+    document.getElementById('root')
 );
 registerServiceWorker();
