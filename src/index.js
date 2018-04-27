@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { Route, Router, Link, Redirect } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import './index.css';
 import App from './App';
 import './App.css';
 import players from './players.json';
 import LiveSearch from './components/live-search';
+import Main from './components/main';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
+
 
 // let images = new Array()
 //     let imageUrlArray = [];
@@ -26,7 +29,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
-        <LiveSearch players={players} />
+        {/* <LiveSearch players={players} /> */}
+        <Main />
     </Provider>,
     document.getElementById('root')
 );

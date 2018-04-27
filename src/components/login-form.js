@@ -1,6 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default function LoginForm(props) {
+function LoginForm(props) {
  
     return (
         <form onSubmit={event => event.preventDefault()}>LogIn&emsp;&emsp;&emsp;&emsp;
@@ -24,3 +25,13 @@ export default function LoginForm(props) {
         </form>
     );
 }
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSignup: () => dispatch()
+    }
+}
+
+
+export default connect()(LoginForm)

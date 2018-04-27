@@ -2,7 +2,8 @@
 import * as actiontypes from '../actions/actiontypes';
 
 const initialState = {
-  foo: 'foo'
+  foo: 'foo',
+  search: false
 }
 
 export default function reducer(state = initialState, action) {

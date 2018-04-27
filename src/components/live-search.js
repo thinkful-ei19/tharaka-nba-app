@@ -6,6 +6,7 @@ import * as actiontypes from '../actions/actiontypes';
 // import CharacterCount from './character-count';
 import PlayerList from './player-list';
 import PlayerListFirst from './player-list-first';
+import { Route, Router, Link, Redirect } from 'react-router-dom';
 // import LoginForm from './login-form';
 
 class LiveSearch extends React.Component {
@@ -97,14 +98,17 @@ class LiveSearch extends React.Component {
             )
         });
         return (
-            <div className="live-search">
-                <p>{this.props.foo}</p>
-                <button onClick={this.props.buttonClicked}>SearchAction</button>
-                SEARCH NBA PLAYERS
-                {/* <LoginForm /> */}
-                <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} /> {/*ignore the isSearch*/}
-                <RealPlayer players={players} />
-            </div>
+            // <Router>//router no props
+                <div className="live-search">
+                    <p>{this.props.foo}</p>
+                    <button onClick={this.props.buttonClicked}>SearchAction</button>
+                    {/* <LoginForm /> */}
+                    SEARCH NBA PLAYERS
+                    <SearchForm change={searchTerm => this.setPlayerSearch(searchTerm)} search={isSearch => this.setIsSearch(isSearch)} /> {/*ignore the isSearch*/}
+                    <RealPlayer players={players} />
+                    {/* <Route exact path="/players" component={RealPlaye players={players}}/> */}
+                </div>
+            // </Router>
         );
     }
 
