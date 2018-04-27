@@ -20,7 +20,7 @@ export default function App(props) {
             <div className="app">
                 <main>
                     <Route exact path="/signup" component={SignupForm} />
-                    <Route exact path="/search" component={PlayerTest} />
+                    <Route exact path="/players" component={PlayerTest} />
                     <Route exact path="/" component={LoginForm} />
                 </main>
             </div>

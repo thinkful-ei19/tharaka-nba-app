@@ -90,6 +90,7 @@ class LiveSearch extends React.Component {
             RealPlayer = PlayerListFirst
         }
         // console.log(this.state.playerData);
+        // console.log(this.props)
         const players = this.props.players.filter(player => {//this.state.playerData should be used for api
             let searchStr = player.name + player.ratings[0].pot;
            
