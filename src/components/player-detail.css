@@ -1,0 +1,17 @@
+li {
+    margin-bottom: 50px;
+}
+
+strong {
+    color: orange;
+}
+
+.profileImage {
+    width: 300px;
+}
+
+.profileImage img {
+    max-height: 100%;
+    max-width: 100%;
+}
+

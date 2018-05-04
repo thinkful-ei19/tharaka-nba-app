@@ -1,4 +1,5 @@
 import React from 'react';
+import './player-list-first.css';
 
 export default function PlayerListFirst(props) {
     const players = props.players.map((player, index) =>
@@ -8,7 +9,7 @@ export default function PlayerListFirst(props) {
     );
 
     return (//Remove {players} if you don't want anything to show up at start
-        <ul className="character-list">
+        <ul className="player-list">
             {players}
         </ul>
     );

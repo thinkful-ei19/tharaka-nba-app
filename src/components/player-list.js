@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayerDetail from './player-detail'
+import './player-list.css';
 
 // export default function PlayerList(props) {
 //     const players = props.players.map((player, index) =>
@@ -32,7 +33,7 @@ export default function PlayerList(props) {
     );
 
     return (
-        <ul className="character-list">
+        <ul className="player-list2">
             {players}
         </ul>
     );

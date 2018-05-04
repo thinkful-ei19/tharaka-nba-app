@@ -1,0 +1,15 @@
+.myTeamList {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(100, 100, 100);
+}
+
+.myTeamList li {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: orange;
+}

@@ -1,6 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import * as actiontypes from '../actions/actiontypes';
+import {addPlayer} from '../actions/add-player'
+import './player-detail.css';
 
-export default class PlayerDetail extends React.Component {
+
+export class PlayerDetail extends React.Component {
 
     constructor(props) {
         super(props)
@@ -33,7 +38,7 @@ export default class PlayerDetail extends React.Component {
             <span>Defense: {this.props.player.ratings[0].diq}</span> <br></br>
 
             {/* Loader until image loads */}
-            <div>
+            <div className="profileImage">
                 {!this.state.imageLoaded &&
                     // <img src={this.props.player.imgURL} alt={`picture`} onLoad={() => {this.imageLoaded()}}/>
                     
@@ -41,8 +46,18 @@ export default class PlayerDetail extends React.Component {
 
                 }
              <img src={this.props.player.imgURL} alt={`picture`} onLoad={() => {this.imageLoaded()}} style={{display: this.state.imageLoaded ? 'block' : 'none'}}/> 
-          
+            
             </div> <br></br>
+            {/* how to pass player Id  */}
+            <button onClick={()=> this.props.addPlayer(this.props.player.id)}>Add</button>
         </li>)
     }
 }
+
+const mapDispactchToProps = (dispatch) => {
+    return {addPlayer: (id)=>{dispatch(addPlayer(id))}}
+}
+
+export default connect(null, mapDispactchToProps)(PlayerDetail)
+
+
