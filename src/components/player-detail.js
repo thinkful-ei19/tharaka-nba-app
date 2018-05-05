@@ -40,12 +40,11 @@ export class PlayerDetail extends React.Component {
             {/* Loader until image loads */}
             <div className="profileImage">
                 {!this.state.imageLoaded &&
-                    // <img src={this.props.player.imgURL} alt={`picture`} onLoad={() => {this.imageLoaded()}}/>
                     
                     <div className='loader'></div>
 
                 }
-             <img src={this.props.player.imgURL} alt={`picture`} onLoad={() => {this.imageLoaded()}} style={{display: this.state.imageLoaded ? 'block' : 'none'}}/> 
+             {/* <img src={this.props.player.imgURL} alt={`picture`} onLoad={() => {this.imageLoaded()}} style={{display: this.state.imageLoaded ? 'block' : 'none'}}/>  */}
             
             </div> <br></br>
             {/* how to pass player Id  */}
