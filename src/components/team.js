@@ -12,7 +12,8 @@ class Team extends React.Component {
 
 
     componentDidMount() {
-        fetch('http://localhost:8080/team')
+        // fetch('http://localhost:8080/team')
+        fetch('https://nba-app-tharaka.herokuapp.com/team')
         .then(res => res.json())
         .then(res => {
             console.log(res)

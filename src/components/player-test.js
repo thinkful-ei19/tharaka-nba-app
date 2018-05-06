@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 export class PlayerTest extends React.Component {
 
     componentDidMount() {
-        fetch('http://localhost:8080/players')
+        // fetch('http://localhost:8080/players')
+        fetch('https://nba-app-tharaka.herokuapp.com/players')
         .then(res => res.json())
         .then(players => this.props.dispatch(setPlayers(players)))
         .catch(err => console.log(err))
