@@ -1,9 +1,10 @@
 .myTeamList {
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    padding: 1em;
     text-align: center;
     font-size: 20px;
     color: white;
-    background-color: rgb(100, 100, 100);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .myTeamList li {

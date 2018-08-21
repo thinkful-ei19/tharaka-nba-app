@@ -5,7 +5,6 @@
 }
 
 .teamMain, .playersMain {
-    /* margin-left: 5px; */
     text-decoration: none;
     text-align: center;
     font-size: 16px;
@@ -24,6 +23,7 @@
 
 .teamMain {
   float: right;
+  margin-bottom: 1em;
 }
 
 .teamMain:hover, .playersMain:hover {
