@@ -12,8 +12,8 @@ class Team extends React.Component {
 
 
     componentDidMount() {
-        // fetch('http://localhost:8080/team')
-        fetch('https://nba-app-tharaka.herokuapp.com/team')
+        fetch('http://localhost:8080/team')
+        // fetch('https://nba-app-tharaka.herokuapp.com/team')
         .then(res => res.json())
         .then(res => {
             console.log(res)
@@ -26,8 +26,8 @@ class Team extends React.Component {
     }
 
     render() {
-        const listHtml = this.state.team.map(p => {
-            return (<li> {p.name} </li>)
+        const listHtml = this.state.team.map((p, index) => {
+            return (<li key={index}> {p.name} </li>)
             // return (<li> {p.name}  <button onClick= {this.deleteElement}> Delete </button></li>)
         })
         return (

@@ -15,8 +15,8 @@ export default function App(props) {
         <BrowserRouter>
             <div className="app">
                 <nav className="nav">
-                    <Link className="teamMain" to='/'>Team</Link>
                     <Link className="playersMain" to='/players'>Players</Link>
+                    <Link className="teamMain" to='/'>My Team</Link>
                 </nav>
                 <main>
                     <Route exact path="/players" component={PlayerTest} />
